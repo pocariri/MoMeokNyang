@@ -269,7 +269,7 @@
         <!--Login View Controller-->
         <scene sceneID="QNC-hB-KYU">
             <objects>
-                <viewController id="fHD-Jh-tnz" customClass="LoginViewController" customModule="MoMeokNyang" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="fHD-Jh-tnz" customClass="LoginViewController" customModule="MoMeokNyang" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7j1-AG-dkA">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -283,6 +283,9 @@
                                 <color key="tintColor" red="0.066666666669999999" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrow.left" catalog="system"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="fHD-Jh-tnz" eventType="touchUpInside" id="GTw-Yu-6oc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기존 계정으로 로그인" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mU-lo-eU1">
                                 <rect key="frame" x="93.666666666666671" y="143" width="185.33333333333331" height="24"/>
@@ -363,6 +366,10 @@
                             <constraint firstItem="iH1-Cg-SHS" firstAttribute="top" secondItem="hHi-u9-GDt" secondAttribute="bottom" constant="16" id="yfO-Lj-R45"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="xSk-oK-gnP" id="2MJ-dg-K7A"/>
+                        <outlet property="passwordTextField" destination="JHN-Ma-be8" id="lLh-7e-KSy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dwc-qW-ZLD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
