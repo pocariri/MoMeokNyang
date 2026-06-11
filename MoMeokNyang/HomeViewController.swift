@@ -25,4 +25,11 @@ class HomeViewController: UIViewController {
         exploreButton.clipsToBounds = true
         exploreButton.titleEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)  
     }
+    
+    // 메뉴 탐색 버튼 클릭 시
+    @IBAction func exploreButtonTapped(_ sender: UIButton) {
+        guard let menuSelectVC = self.storyboard?.instantiateViewController(withIdentifier: "MenuSelectViewController") as? MenuSelectViewController else { return }
+        
+        self.navigationController?.pushViewController(menuSelectVC, animated: true)
+    }
 }

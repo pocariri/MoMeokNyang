@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,12 +12,24 @@
         <!--지도-->
         <scene sceneID="qWZ-LX-4Aj">
             <objects>
-                <viewController id="VwW-Xy-BhY" sceneMemberID="viewController">
+                <viewController id="VwW-Xy-BhY" customClass="MapViewController" customModule="MoMeokNyang" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cIz-0V-cIf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DcN-nf-E7g">
+                                <rect key="frame" x="0.0" y="118" width="393" height="617"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="yfN-fg-jIn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DcN-nf-E7g" firstAttribute="leading" secondItem="yfN-fg-jIn" secondAttribute="leading" id="8xi-lw-cgb"/>
+                            <constraint firstItem="DcN-nf-E7g" firstAttribute="top" secondItem="yfN-fg-jIn" secondAttribute="top" id="JlE-nf-teP"/>
+                            <constraint firstItem="yfN-fg-jIn" firstAttribute="bottom" secondItem="DcN-nf-E7g" secondAttribute="bottom" id="UAG-ag-eg5"/>
+                            <constraint firstItem="yfN-fg-jIn" firstAttribute="trailing" secondItem="DcN-nf-E7g" secondAttribute="trailing" id="ZEV-MI-5T0"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="지도" image="map" catalog="system" id="j1O-xU-xTZ"/>
                 </viewController>
@@ -56,7 +69,7 @@
             </objects>
             <point key="canvasLocation" x="-37" y="1255"/>
         </scene>
-        <!--홈-->
+        <!--Home View Controller-->
         <scene sceneID="MRE-mw-4cX">
             <objects>
                 <viewController id="Th3-nP-Yfw" customClass="HomeViewController" customModule="MoMeokNyang" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,6 +116,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="메뉴 탐색하기">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="exploreButtonTapped:" destination="Th3-nP-Yfw" eventType="touchUpInside" id="YEj-46-X1W"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3DD-6U-nBq"/>
@@ -118,7 +134,7 @@
                             <constraint firstItem="RNw-v5-jcR" firstAttribute="leading" secondItem="3DD-6U-nBq" secondAttribute="leading" constant="50" id="mSb-nj-y5t"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" id="TrF-Wz-pQ7"/>
+                    <navigationItem key="navigationItem" id="nc5-J5-Rww"/>
                     <connections>
                         <outlet property="exploreButton" destination="RNw-v5-jcR" id="uyD-TY-ngB"/>
                         <outlet property="foodImageView" destination="hxD-Do-WQa" id="2V2-N2-GGy"/>
@@ -127,7 +143,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nat-ja-kqu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-37" y="-1639"/>
+            <point key="canvasLocation" x="889.3129770992366" y="-1639.4366197183099"/>
+        </scene>
+        <!--Menu Select View Controller-->
+        <scene sceneID="nCl-fn-Vcm">
+            <objects>
+                <viewController storyboardIdentifier="MenuSelectViewController" id="yqP-uC-2GM" customClass="MenuSelectViewController" customModule="MoMeokNyang" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CnI-0i-6xr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9oQ-Sv-7Op"/>
+                        <color key="backgroundColor" red="0.94117647058823528" green="0.99215686274509807" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lg3-94-KfT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1830" y="-1639"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="CdB-N7-Cwx">
@@ -139,7 +170,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Th3-nP-Yfw" kind="relationship" relationship="viewControllers" id="1Hh-Dp-qpd"/>
+                        <segue destination="xVw-oE-jYR" kind="relationship" relationship="viewControllers" id="1Hh-Dp-qpd"/>
                         <segue destination="VwW-Xy-BhY" kind="relationship" relationship="viewControllers" id="X6P-xi-OR3"/>
                         <segue destination="Lmc-Py-AW8" kind="relationship" relationship="viewControllers" id="8u4-i1-oiX"/>
                         <segue destination="OJC-Bf-Izi" kind="relationship" relationship="viewControllers" id="wrA-DQ-2AI"/>
@@ -148,6 +179,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QjE-VN-hm6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1189" y="-214"/>
+        </scene>
+        <!--홈-->
+        <scene sceneID="1Gs-4n-GGz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="xVw-oE-jYR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" id="TrF-Wz-pQ7"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DoE-9d-Kde">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Th3-nP-Yfw" kind="relationship" relationship="rootViewController" id="uTc-sN-kQ1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c1g-mB-sLW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-37.404580152671755" y="-1639.4366197183099"/>
         </scene>
     </scenes>
     <resources>
