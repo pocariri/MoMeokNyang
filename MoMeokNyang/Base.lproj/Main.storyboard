@@ -65,7 +65,7 @@
                                 <rect key="frame" x="20" y="138" width="353" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="모먹냥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JF-u9-Sim">
-                                        <rect key="frame" x="8" y="31" width="45" height="21"/>
+                                        <rect key="frame" x="8" y="31" width="131" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.066666666669999999" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -91,6 +91,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="로그아웃">
                                     <color key="baseForegroundColor" red="0.066666666669999999" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="logoutButtonTapped:" destination="OJC-Bf-Izi" eventType="touchUpInside" id="lL4-Nu-KmS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjd-cq-Hkx">
                                 <rect key="frame" x="20" y="238" width="353" height="50"/>
@@ -102,6 +105,9 @@
                                     <color key="baseForegroundColor" red="0.066666666669999999" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="editProfileButtonTapped:" destination="OJC-Bf-Izi" eventType="touchUpInside" id="7eB-ER-ef7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lfi-1I-DY8"/>
@@ -124,6 +130,10 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <tabBarItem key="tabBarItem" title="프로필" image="person" catalog="system" id="Z7t-5b-Y7O"/>
+                    <connections>
+                        <outlet property="nicknameLabel" destination="4JF-u9-Sim" id="kPE-DC-423"/>
+                        <outlet property="topHeaderView" destination="NYJ-qx-iEL" id="H29-du-EbU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6t-cD-Ddg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
