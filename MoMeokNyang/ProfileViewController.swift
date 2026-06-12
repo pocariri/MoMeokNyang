@@ -9,7 +9,7 @@ class ProfileViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let isUserLoggedIn = false
+        let isUserLoggedIn = true
         
         if !isUserLoggedIn {
             guard let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else { return }

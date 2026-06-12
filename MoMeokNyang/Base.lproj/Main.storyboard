@@ -60,14 +60,74 @@
                     <view key="view" contentMode="scaleToFill" id="XmE-58-2b1">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYJ-qx-iEL">
+                                <rect key="frame" x="20" y="138" width="353" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="모먹냥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JF-u9-Sim">
+                                        <rect key="frame" x="8" y="31" width="45" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.066666666669999999" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="마이페이지 화면입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVK-Qv-Ggj">
+                                        <rect key="frame" x="193" y="30" width="152" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.63921568630000003" green="0.89411764709999997" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="c1g-8u-grM"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="exa-CI-g7B"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IiQ-Hj-gLS">
+                                <rect key="frame" x="155" y="308" width="83" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="로그아웃">
+                                    <color key="baseForegroundColor" red="0.066666666669999999" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjd-cq-Hkx">
+                                <rect key="frame" x="20" y="238" width="353" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WlK-Kc-BLQ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="chevron.right" catalog="system" imagePlacement="trailing" title="프로필 수정">
+                                    <color key="baseForegroundColor" red="0.066666666669999999" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Lfi-1I-DY8"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.99215686270000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Zjd-cq-Hkx" firstAttribute="top" secondItem="NYJ-qx-iEL" secondAttribute="bottom" constant="20" id="4VK-fF-O2d"/>
+                            <constraint firstItem="IiQ-Hj-gLS" firstAttribute="leading" secondItem="Lfi-1I-DY8" secondAttribute="leading" constant="155" id="DYP-5D-enf"/>
+                            <constraint firstItem="Lfi-1I-DY8" firstAttribute="trailing" secondItem="Zjd-cq-Hkx" secondAttribute="trailing" constant="20" id="FIp-bj-qCt"/>
+                            <constraint firstItem="NYJ-qx-iEL" firstAttribute="top" secondItem="Lfi-1I-DY8" secondAttribute="top" constant="20" id="Fqo-yr-ibB"/>
+                            <constraint firstItem="Lfi-1I-DY8" firstAttribute="trailing" secondItem="IiQ-Hj-gLS" secondAttribute="trailing" constant="155" id="H9Z-nb-ScD"/>
+                            <constraint firstItem="Zjd-cq-Hkx" firstAttribute="leading" secondItem="Lfi-1I-DY8" secondAttribute="leading" constant="20" id="etZ-eh-0xn"/>
+                            <constraint firstItem="Lfi-1I-DY8" firstAttribute="trailing" secondItem="NYJ-qx-iEL" secondAttribute="trailing" constant="20" id="laF-xZ-BE0"/>
+                            <constraint firstItem="IiQ-Hj-gLS" firstAttribute="top" secondItem="Zjd-cq-Hkx" secondAttribute="bottom" constant="20" id="mYf-yA-96p"/>
+                            <constraint firstItem="NYJ-qx-iEL" firstAttribute="leading" secondItem="Lfi-1I-DY8" secondAttribute="leading" constant="20" id="w0G-NP-rpw"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <tabBarItem key="tabBarItem" title="프로필" image="person" catalog="system" id="Z7t-5b-Y7O"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6t-cD-Ddg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-37" y="1255"/>
+            <point key="canvasLocation" x="-37.404580152671755" y="1254.9295774647887"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="MRE-mw-4cX">
@@ -529,6 +589,7 @@
     </scenes>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="95"/>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
         <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="insertInHome" width="350" height="392"/>
