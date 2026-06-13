@@ -44,12 +44,99 @@
                     <view key="view" contentMode="scaleToFill" id="aNN-UJ-3Yu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E7Y-SI-3fs">
+                                <rect key="frame" x="20" y="138" width="353" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="모먹냥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0X1-zU-ucn">
+                                        <rect key="frame" x="8" y="31" width="131" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.066666666669999999" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="그 동안의 먹냥이 기록입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRs-fR-rOV">
+                                        <rect key="frame" x="150" y="31" width="195" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.63921568630000003" green="0.89411764709999997" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="ipt-xG-p5e"/>
+                                    <constraint firstAttribute="height" constant="80" id="y2f-0f-NdO"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="80" id="zgn-vH-hde"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Pq4-Kn-6tu">
+                                <rect key="frame" x="20" y="238" width="353" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="pnH-w6-Y3Y"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="최근 기록"/>
+                                    <segment title="찜 목록"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="Lmc-Py-AW8" eventType="valueChanged" id="6qz-vm-Cw2"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="i3G-m1-Y6J">
+                                <rect key="frame" x="20" y="308" width="353" height="407"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="EbH-NO-gy5"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.99215686270000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="EbH-NO-gy5" firstAttribute="trailing" secondItem="E7Y-SI-3fs" secondAttribute="trailing" constant="20" id="0Qt-Sw-LfY"/>
+                            <constraint firstItem="i3G-m1-Y6J" firstAttribute="leading" secondItem="EbH-NO-gy5" secondAttribute="leading" constant="20" id="7LE-Om-IYp"/>
+                            <constraint firstItem="i3G-m1-Y6J" firstAttribute="top" secondItem="Pq4-Kn-6tu" secondAttribute="bottom" constant="20" id="EVA-4i-AbO"/>
+                            <constraint firstItem="E7Y-SI-3fs" firstAttribute="leading" secondItem="EbH-NO-gy5" secondAttribute="leading" constant="20" id="Msv-nc-UHD"/>
+                            <constraint firstItem="EbH-NO-gy5" firstAttribute="trailing" secondItem="Pq4-Kn-6tu" secondAttribute="trailing" constant="20" id="OCF-QN-XNZ"/>
+                            <constraint firstItem="EbH-NO-gy5" firstAttribute="bottom" secondItem="i3G-m1-Y6J" secondAttribute="bottom" constant="20" id="cTb-GR-xLF"/>
+                            <constraint firstItem="Pq4-Kn-6tu" firstAttribute="leading" secondItem="EbH-NO-gy5" secondAttribute="leading" constant="20" id="giK-5f-nmw"/>
+                            <constraint firstItem="Pq4-Kn-6tu" firstAttribute="top" secondItem="E7Y-SI-3fs" secondAttribute="bottom" constant="20" id="nIB-Au-tM8"/>
+                            <constraint firstItem="E7Y-SI-3fs" firstAttribute="top" secondItem="EbH-NO-gy5" secondAttribute="top" constant="20" id="pkl-Gy-nBu"/>
+                            <constraint firstItem="EbH-NO-gy5" firstAttribute="trailing" secondItem="i3G-m1-Y6J" secondAttribute="trailing" constant="20" id="vqR-GB-23e"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="기록" image="doc.text" catalog="system" id="SDq-vb-dRP"/>
+                    <connections>
+                        <outlet property="nicknameLabel" destination="0X1-zU-ucn" id="LKb-a4-8ZK"/>
+                        <outlet property="recordSegmentedControl" destination="Pq4-Kn-6tu" id="Exr-hV-WQ1"/>
+                        <outlet property="recordTableView" destination="i3G-m1-Y6J" id="hPW-1G-OLk"/>
+                        <outlet property="topHeaderView" destination="E7Y-SI-3fs" id="hFG-bd-WBT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tiz-WG-QCH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4IZ-py-ge3">
+                    <rect key="frame" x="0.0" y="0.0" width="353" height="80"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="모먹냥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmQ-j6-iLW">
+                            <rect key="frame" x="8" y="31" width="131" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.066666666669999999" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="마이페이지 화면입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zxu-ws-qYy">
+                            <rect key="frame" x="193" y="30" width="152" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.63921568630000003" green="0.89411764709999997" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="nTU-Uo-XaE"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="1Ii-Xy-5Ij"/>
+                        <constraint firstAttribute="height" constant="80" id="up0-Ot-0pI"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="-37" y="283"/>
         </scene>
