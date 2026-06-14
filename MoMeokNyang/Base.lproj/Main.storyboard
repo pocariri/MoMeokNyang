@@ -612,8 +612,8 @@
                                     <action selector="backButtonTapped:" destination="yqP-uC-2GM" eventType="touchUpInside" id="fLY-9E-vUA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="추천 결과가 나왔습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g1-Sg-pf8">
-                                <rect key="frame" x="58" y="175" width="273" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추천 결과가 나왔습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g1-Sg-pf8">
+                                <rect key="frame" x="20" y="175" width="273" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="Uaa-0U-0Dw"/>
                                 </constraints>
@@ -622,7 +622,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnS-Ev-gUt">
-                                <rect key="frame" x="58" y="221" width="262" height="41"/>
+                                <rect key="frame" x="20" y="221" width="300" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="iRH-hW-aLU"/>
                                 </constraints>
@@ -679,16 +679,17 @@
                         <viewLayoutGuide key="safeArea" id="qhl-d8-ddI"/>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.99215686270000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="2g1-Sg-pf8" firstAttribute="leading" secondItem="qhl-d8-ddI" secondAttribute="leading" constant="20" id="1Es-Mg-zfk"/>
                             <constraint firstItem="19v-NB-FOT" firstAttribute="leading" secondItem="qhl-d8-ddI" secondAttribute="leading" constant="20" id="46G-tv-sML"/>
                             <constraint firstItem="qhl-d8-ddI" firstAttribute="trailing" secondItem="dHf-sz-fmz" secondAttribute="trailing" constant="20" id="86c-6z-aYE"/>
                             <constraint firstItem="WYA-WA-5uc" firstAttribute="leading" secondItem="Om8-pz-Xai" secondAttribute="trailing" constant="81" id="NXw-0S-sxs"/>
                             <constraint firstItem="eYd-In-ORP" firstAttribute="top" secondItem="Eit-ZZ-z7c" secondAttribute="bottom" constant="20" id="OD2-Pv-hrt"/>
                             <constraint firstItem="Om8-pz-Xai" firstAttribute="leading" secondItem="qhl-d8-ddI" secondAttribute="leading" constant="20" id="OSO-LC-fT4"/>
                             <constraint firstItem="dHf-sz-fmz" firstAttribute="top" secondItem="19v-NB-FOT" secondAttribute="bottom" constant="20" id="PGe-XM-Mlz"/>
-                            <constraint firstItem="lnS-Ev-gUt" firstAttribute="leading" secondItem="qhl-d8-ddI" secondAttribute="leading" constant="58" id="PeM-Bv-abc"/>
                             <constraint firstItem="qhl-d8-ddI" firstAttribute="trailing" secondItem="19v-NB-FOT" secondAttribute="trailing" constant="20" id="REn-Eq-9nZ"/>
                             <constraint firstItem="19v-NB-FOT" firstAttribute="top" secondItem="eYd-In-ORP" secondAttribute="bottom" constant="10" id="RPg-9d-Zdi"/>
                             <constraint firstItem="qhl-d8-ddI" firstAttribute="trailing" secondItem="eYd-In-ORP" secondAttribute="trailing" constant="20" id="S2b-gZ-j4x"/>
+                            <constraint firstItem="lnS-Ev-gUt" firstAttribute="leading" secondItem="qhl-d8-ddI" secondAttribute="leading" constant="20" id="UqL-6k-ko4"/>
                             <constraint firstItem="lnS-Ev-gUt" firstAttribute="top" secondItem="2g1-Sg-pf8" secondAttribute="bottom" constant="10" id="Vcj-Mf-wcz"/>
                             <constraint firstItem="Eit-ZZ-z7c" firstAttribute="leading" secondItem="qhl-d8-ddI" secondAttribute="leading" constant="20" id="hQ1-hD-kmP"/>
                             <constraint firstItem="WYA-WA-5uc" firstAttribute="top" secondItem="qhl-d8-ddI" secondAttribute="top" constant="13" id="hma-Aj-Lsv"/>
@@ -702,6 +703,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="menuImageView" destination="eYd-In-ORP" id="FYj-ka-mhE"/>
                         <outlet property="menuNameLabel" destination="19v-NB-FOT" id="jXi-or-tge"/>
                     </connections>
                 </viewController>

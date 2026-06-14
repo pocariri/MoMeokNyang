@@ -4,6 +4,7 @@ import FirebaseFirestore
 
 class RecommendationResultViewController: UIViewController {
     @IBOutlet weak var menuNameLabel: UILabel!
+    @IBOutlet weak var menuImageView: UIImageView!
     
     var recommendedMenuName: String = ""
     var recommendedCategory: String = ""
@@ -17,6 +18,10 @@ class RecommendationResultViewController: UIViewController {
     // 라벨 텍스트를 새로고침하는 함수
     private func updateLabel() {
         menuNameLabel.text = recommendedMenuName
+        
+        if let foodImage = UIImage(named: recommendedMenuName) {
+            menuImageView.image = foodImage
+        }
     }
     
     // 뒤로가기 버튼
