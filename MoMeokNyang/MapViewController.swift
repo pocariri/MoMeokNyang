@@ -30,7 +30,7 @@ class MapViewController: UIViewController {
             self.searchQuery = nil
             
             if self.currentCoordinate != nil {
-                print("📍 변수 진입 타이밍 성공: '\(self.currentSearchMenu)' 검색 시작!")
+                print("변수 진입 타이밍 성공: '\(self.currentSearchMenu)' 검색 시작!")
                 self.searchLocalRestaurants(keyword: self.currentSearchMenu)
                 locationManager.stopUpdatingLocation()
             }
@@ -150,7 +150,7 @@ extension MapViewController: MKMapViewDelegate {
         )
         
         // 찜 완료 알림창 띄워주기
-        let alert = UIAlertController(title: "찜 완료! ❤️", message: "내 찜 목록에 새로운 가게가추가되었습니다.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "찜 완료!", message: "내 찜 목록에 새로운 가게가추가되었습니다.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "확인", style: .default))
         self.present(alert, animated: true)
     }
