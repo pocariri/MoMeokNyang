@@ -71,17 +71,16 @@ class RecommendationResultViewController: UIViewController {
             let alert = UIAlertController(title: "결정 완료!", message: "오늘의 메뉴가 기록에 저장되었습니다.\n지도 화면으로 이동할까요?", preferredStyle: .alert)
             
             let mapAction = UIAlertAction(title: "지도 보기", style: .default) { _ in
-                self?.dismiss(animated: true) {
+                guard let currentVC = self else { return }
+                
+                currentVC.dismiss(animated: true) {
                     if let tabBarController = UIApplication.shared.windows.first?.rootViewController as? UITabBarController,
                        let viewControllers = tabBarController.viewControllers {
-                        let mapVC: MapViewController?
-                        if let navVC = viewControllers[1] as? UINavigationController {
-                            mapVC = navVC.topViewController as? MapViewController
-                        } else {
-                            mapVC = viewControllers[1] as? MapViewController
-                        }
                         
-                        mapVC?.searchQuery = self.recommendedMenuName
+                        let targetVC = viewControllers[1]
+                        let mapVC = (targetVC as? UINavigationController)?.topViewController as? MapViewController ?? (targetVC as? MapViewController)
+                        
+                        mapVC?.searchQuery = currentVC.recommendedMenuName
                         
                         tabBarController.selectedIndex = 1
                     }

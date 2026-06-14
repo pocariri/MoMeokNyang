@@ -15,6 +15,12 @@ struct EatingRecord {
     }
 }
 
+struct FavoriteRestaurant {
+    let restaurantName: String
+    let address: String
+    let menuName: String
+}
+
 class RecordViewController: UIViewController {
     
     @IBOutlet weak var nicknameLabel: UILabel!
@@ -23,6 +29,7 @@ class RecordViewController: UIViewController {
     @IBOutlet weak var recordTableView: UITableView!
     
     private var eatingRecords: [EatingRecord] = []
+    private var favoriteRestaurants: [FavoriteRestaurant] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +52,7 @@ class RecordViewController: UIViewController {
         } else {
             fetchUserProfile()
             fetchEatingRecords()
+            fetchFavoriteRestaurants()
         }
     }
     
@@ -101,6 +109,46 @@ class RecordViewController: UIViewController {
             }
     }
     
+    // ❤️ 3. [추가] 파이어베이스에서 진짜 찜한 가게 리스트 긁어오기!
+        private func fetchFavoriteRestaurants() {
+            guard let currentUser = Auth.auth().currentUser else { return }
+            let db = Firestore.firestore()
+            
+            db.collection("SavedRestaurants")
+                .whereField("userId", isEqualTo: currentUser.uid)
+                .order(by: "savedAt", descending: true) // 최신순 정렬
+                .getDocuments { [weak self] (querySnapshot, error) in
+                    if let error = error {
+                        print("❌ 찜 목록 로드 실패: \(error.localizedDescription)")
+                        return
+                    }
+                    
+                    var fetchedFavorites: [FavoriteRestaurant] = []
+                    
+                    if let documents = querySnapshot?.documents {
+                        for document in documents {
+                            let data = document.data()
+                            let restaurantName = data["restaurantName"] as? String ?? "이름 없는 식당"
+                            let address = data["address"] as? String ?? "주소 불명"
+                            let menuName = data["menuName"] as? String ?? "추천 메뉴"
+                            
+                            let favorite = FavoriteRestaurant(restaurantName: restaurantName, address: address, menuName: menuName)
+                            fetchedFavorites.append(favorite)
+                        }
+                    }
+                    
+                    self?.favoriteRestaurants = fetchedFavorites
+                    print("🗳️ 파이어베이스에서 총 \(fetchedFavorites.count)개의 찜 데이터 로드 완료했다냥!")
+                    
+                    // 현재 찜 목록(1번 세그먼트)이 켜져있을 때만 리로드
+                    if self?.recordSegmentedControl.selectedSegmentIndex == 1 {
+                        DispatchQueue.main.async {
+                            self?.recordTableView.reloadData()
+                        }
+                    }
+                }
+        }
+    
     // 세그먼트 값이 바뀔 때마다 실행되는 함수
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -109,7 +157,7 @@ class RecordViewController: UIViewController {
             fetchEatingRecords()
         case 1:
             print("찜 목록 탭")
-            recordTableView.reloadData()
+            fetchFavoriteRestaurants()
         default:
             break
         }
@@ -129,7 +177,7 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource {
         if recordSegmentedControl.selectedSegmentIndex == 0 {
             return eatingRecords.count
         } else {
-            return 5
+            return favoriteRestaurants.count
         }
     }
     
@@ -153,9 +201,13 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource {
             cell.accessoryView = dateLabel
             
         } else {
-            // 찜 목록 탭 (임시)
-            cell.textLabel?.text = "찜한 식당 데이터 자리 #\(indexPath.row + 1)"
-            cell.detailTextLabel?.text = ""
+            let favorite = favoriteRestaurants[indexPath.row]
+                        
+            cell.textLabel?.text = favorite.restaurantName
+            cell.textLabel?.textColor = .black
+            
+            cell.detailTextLabel?.text = "추천받은 메뉴: \(favorite.menuName) | \(favorite.address)"
+            cell.detailTextLabel?.textColor = .darkGray
         }
         
         return cell
