@@ -59,8 +59,5 @@
 <div align="center">
   <a href="https://youtube.com/watch?v=_CA1e1xce0k">
     <img src="https://img.youtube.com/vi/_CA1e1xce0k/0.jpg" alt="모먹냥 앱 시연 영상" width="600px">
-    <br>
-    <br>
-    <strong>[위 이미지를 클릭하거나 여기를 눌러 시연 영상 시청하기]https://youtube.com/watch?=v_CA1e1xce0k</strong>
   </div>
 </div>
