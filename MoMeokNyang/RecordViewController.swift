@@ -2,12 +2,20 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
+struct EatingRecord {
+    let menuName: String
+    let category: String
+    let timestamp: Date?
+}
+
 class RecordViewController: UIViewController {
     
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var topHeaderView: UIView!
     @IBOutlet weak var recordSegmentedControl: UISegmentedControl!
     @IBOutlet weak var recordTableView: UITableView!
+    
+    private var eatingRecords: [EatingRecord] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +37,7 @@ class RecordViewController: UIViewController {
             }
         } else {
             fetchUserProfile()
-            recordTableView.reloadData()
+            fetchEatingRecords()
         }
     }
     
@@ -49,13 +57,52 @@ class RecordViewController: UIViewController {
         }
     }
     
+    // 메뉴 결정 기록 데이터 가져오기
+    private func fetchEatingRecords() {
+        guard let currentUser = Auth.auth().currentUser else { return }
+        let db = Firestore.firestore()
+        
+        db.collection("EatingRecords")
+            .whereField("userId", isEqualTo: currentUser.uid)
+            .order(by: "timestamp", descending: true)
+            .getDocuments { [weak self] (querySnapshot, error) in
+                
+                if let error = error {
+                    print("기록 로드 실패")
+                    return
+                }
+                
+                var fetchedRecords: [EatingRecord] = []
+                
+                if let documents = querySnapshot?.documents {
+                    for document in documents {
+                        let data = document.data()
+                        let menuName = data["menuName"] as? String ?? "맛있는 음식"
+                        let category = data["category"] as? String ?? "미분류"
+                        let timestamp = (data["timestamp"] as? Timestamp)?.dateValue()
+                        
+                        let record = EatingRecord(menuName: menuName, category: category, timestamp: timestamp)
+                        fetchedRecords.append(record)
+                    }
+                }
+                
+                self?.eatingRecords = fetchedRecords
+                
+                DispatchQueue.main.async {
+                    self?.recordTableView.reloadData()
+                }
+            }
+    }
+    
     // 세그먼트 값이 바뀔 때마다 실행되는 함수
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
             print("최근 기록 탭")
+            fetchEatingRecords()
         case 1:
             print("찜 목록 탭")
+            recordTableView.reloadData()
         default:
             break
         }
@@ -73,7 +120,7 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // 우선 화면이 잘 돌아가는지 확인하기 위해 임시로 5개만 띄웁니다.
-        return 5
+        return 15
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

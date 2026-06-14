@@ -425,13 +425,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어떻게 추천 받을까요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9L-3f-Sjx">
-                                <rect key="frame" x="20" y="177" width="350" height="48"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <rect key="frame" x="20" y="177" width="262.66666666666669" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOP-9I-OHh">
-                                <rect key="frame" x="20" y="244.99999999999997" width="295.66666666666669" height="40.666666666666657"/>
+                                <rect key="frame" x="20" y="233" width="295.66666666666669" height="40.666666666666686"/>
                                 <string key="text">카테고리를 설정할지,
 바로 세 가지 메뉴를 추천받을지  골라보세요.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -439,7 +439,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZdM-Qr-YJl">
-                                <rect key="frame" x="20" y="315.66666666666669" width="353" height="120"/>
+                                <rect key="frame" x="20" y="303.66666666666669" width="353" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="카테고리 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQB-CB-m6G">
                                         <rect key="frame" x="111" y="21" width="130" height="29"/>
@@ -466,61 +466,178 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQt-tO-wT2">
-                                <rect key="frame" x="20" y="455.66666666666674" width="353" height="120"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="바로 랜덤 추천" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfa-SC-lLl">
-                                        <rect key="frame" x="109" y="25" width="135" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="별도의 설정 없이 메뉴를 추천합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gB-3E-cRf">
-                                        <rect key="frame" x="55" y="73" width="243" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="lightTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.066666666669999999" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tok-mE-sG1">
+                                <rect key="frame" x="20" y="443.66666666666669" width="353" height="120.00000000000006"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="6Zv-ac-CVI"/>
+                                    <constraint firstAttribute="height" constant="120" id="lK1-s2-VYc"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="24"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="바로 랜덤 추천" subtitle="별도의 설정 없이 메뉴를 추천합니다">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                    <color key="baseBackgroundColor" red="0.066666666669999999" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="quickRandomButtonTapped:" destination="yqP-uC-2GM" eventType="touchUpInside" id="lPH-3v-9lu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9oQ-Sv-7Op"/>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.99215686274509807" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="9oQ-Sv-7Op" firstAttribute="trailing" secondItem="NQt-tO-wT2" secondAttribute="trailing" constant="20" id="221-8M-4gf"/>
                             <constraint firstItem="CV5-Tu-gfI" firstAttribute="top" secondItem="9oQ-Sv-7Op" secondAttribute="top" constant="13" id="31r-t4-E9u"/>
                             <constraint firstItem="CV5-Tu-gfI" firstAttribute="top" secondItem="9oQ-Sv-7Op" secondAttribute="top" constant="14" id="5w8-zd-Cxj"/>
                             <constraint firstItem="CV5-Tu-gfI" firstAttribute="top" secondItem="9oQ-Sv-7Op" secondAttribute="top" constant="15" id="Bfn-h5-ZqX"/>
-                            <constraint firstItem="NQt-tO-wT2" firstAttribute="leading" secondItem="9oQ-Sv-7Op" secondAttribute="leading" constant="20" id="C4N-PB-c0F"/>
-                            <constraint firstItem="NQt-tO-wT2" firstAttribute="top" secondItem="ZdM-Qr-YJl" secondAttribute="bottom" constant="20" id="GW9-4T-wzl"/>
                             <constraint firstItem="EOP-9I-OHh" firstAttribute="top" secondItem="p9L-3f-Sjx" secondAttribute="bottom" constant="20" id="I6p-uq-wd3"/>
+                            <constraint firstItem="tok-mE-sG1" firstAttribute="leading" secondItem="9oQ-Sv-7Op" secondAttribute="leading" constant="20" id="JJ9-Ax-aai"/>
                             <constraint firstItem="EOP-9I-OHh" firstAttribute="leading" secondItem="9oQ-Sv-7Op" secondAttribute="leading" constant="20" id="JsH-00-EoK"/>
                             <constraint firstItem="9oQ-Sv-7Op" firstAttribute="trailing" secondItem="ZdM-Qr-YJl" secondAttribute="trailing" constant="20" id="MQe-ne-L1f"/>
                             <constraint firstItem="9oQ-Sv-7Op" firstAttribute="trailing" secondItem="CV5-Tu-gfI" secondAttribute="trailing" constant="131.5" id="QEt-bB-ArY"/>
+                            <constraint firstItem="9oQ-Sv-7Op" firstAttribute="trailing" secondItem="tok-mE-sG1" secondAttribute="trailing" constant="20" id="QmK-tb-5oD"/>
                             <constraint firstItem="ZdM-Qr-YJl" firstAttribute="leading" secondItem="9oQ-Sv-7Op" secondAttribute="leading" constant="20" id="YNU-Lk-Rkf"/>
                             <constraint firstItem="p9L-3f-Sjx" firstAttribute="leading" secondItem="9oQ-Sv-7Op" secondAttribute="leading" constant="20" id="aRL-AC-mnf"/>
                             <constraint firstItem="ZdM-Qr-YJl" firstAttribute="top" secondItem="EOP-9I-OHh" secondAttribute="bottom" constant="30" id="fqc-nh-aMT"/>
                             <constraint firstItem="p9L-3f-Sjx" firstAttribute="top" secondItem="CV5-Tu-gfI" secondAttribute="bottom" constant="20" id="gpu-zo-zmi"/>
                             <constraint firstItem="xlz-Ql-MvC" firstAttribute="top" secondItem="9oQ-Sv-7Op" secondAttribute="top" constant="10" id="hiG-S3-ies"/>
                             <constraint firstItem="CV5-Tu-gfI" firstAttribute="leading" secondItem="9oQ-Sv-7Op" secondAttribute="leading" constant="131.5" id="rzT-hC-aHw"/>
+                            <constraint firstItem="tok-mE-sG1" firstAttribute="top" secondItem="ZdM-Qr-YJl" secondAttribute="bottom" constant="20" id="xJL-60-UaX"/>
                             <constraint firstItem="xlz-Ql-MvC" firstAttribute="leading" secondItem="9oQ-Sv-7Op" secondAttribute="leading" constant="20" id="ze8-LH-8dW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="quickRandomButton" destination="tok-mE-sG1" id="Qn8-RX-ETr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lg3-94-KfT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1829.7709923664122" y="-1639.4366197183099"/>
+        </scene>
+        <!--Recommendation Result View Controller-->
+        <scene sceneID="yoz-7j-xO5">
+            <objects>
+                <viewController storyboardIdentifier="RecommendationResultViewController" id="ixT-Oa-ESn" customClass="RecommendationResultViewController" customModule="MoMeokNyang" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eed-PT-4WB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모먹냥 메뉴추천" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYA-WA-5uc">
+                                <rect key="frame" x="131" y="131" width="126" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Oag-ha-8mf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.066666666669999999" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Om8-pz-Xai">
+                                <rect key="frame" x="20" y="128" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Jw4-Sg-xXk"/>
+                                    <constraint firstAttribute="width" constant="30" id="O2Z-PD-qHJ"/>
+                                </constraints>
+                                <color key="tintColor" red="0.066666666669999999" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.left" catalog="system"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="ixT-Oa-ESn" eventType="touchUpInside" id="Qeh-wA-GXG"/>
+                                    <action selector="backButtonTapped:" destination="yqP-uC-2GM" eventType="touchUpInside" id="fLY-9E-vUA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="추천 결과가 나왔습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g1-Sg-pf8">
+                                <rect key="frame" x="58" y="175" width="273" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Uaa-0U-0Dw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnS-Ev-gUt">
+                                <rect key="frame" x="58" y="221" width="262" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="iRH-hW-aLU"/>
+                                </constraints>
+                                <string key="text">메뉴가 마음에 드시면 결정,
+마음에 안 드시면 다시 한 번 돌려보세요</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eit-ZZ-z7c">
+                                <rect key="frame" x="20" y="282" width="353" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dA1-Pc-nlP"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="한 번 더 랜덤">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.066666666669999999" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="retryButtonTapped:" destination="ixT-Oa-ESn" eventType="touchUpInside" id="7rH-7J-8nf"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eYd-In-ORP">
+                                <rect key="frame" x="20" y="352" width="353" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="i8f-bm-faV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19v-NB-FOT">
+                                <rect key="frame" x="20" y="562" width="353" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="S1B-Vb-T8l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHf-sz-fmz">
+                                <rect key="frame" x="20" y="606" width="353" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dAb-6L-GP7"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="이 메뉴로 결정">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.066666666669999999" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="decisionButtonTapped:" destination="ixT-Oa-ESn" eventType="touchUpInside" id="GIt-Bt-9Ip"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qhl-d8-ddI"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.99215686270000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="19v-NB-FOT" firstAttribute="leading" secondItem="qhl-d8-ddI" secondAttribute="leading" constant="20" id="46G-tv-sML"/>
+                            <constraint firstItem="qhl-d8-ddI" firstAttribute="trailing" secondItem="dHf-sz-fmz" secondAttribute="trailing" constant="20" id="86c-6z-aYE"/>
+                            <constraint firstItem="WYA-WA-5uc" firstAttribute="leading" secondItem="Om8-pz-Xai" secondAttribute="trailing" constant="81" id="NXw-0S-sxs"/>
+                            <constraint firstItem="eYd-In-ORP" firstAttribute="top" secondItem="Eit-ZZ-z7c" secondAttribute="bottom" constant="20" id="OD2-Pv-hrt"/>
+                            <constraint firstItem="Om8-pz-Xai" firstAttribute="leading" secondItem="qhl-d8-ddI" secondAttribute="leading" constant="20" id="OSO-LC-fT4"/>
+                            <constraint firstItem="dHf-sz-fmz" firstAttribute="top" secondItem="19v-NB-FOT" secondAttribute="bottom" constant="20" id="PGe-XM-Mlz"/>
+                            <constraint firstItem="lnS-Ev-gUt" firstAttribute="leading" secondItem="qhl-d8-ddI" secondAttribute="leading" constant="58" id="PeM-Bv-abc"/>
+                            <constraint firstItem="qhl-d8-ddI" firstAttribute="trailing" secondItem="19v-NB-FOT" secondAttribute="trailing" constant="20" id="REn-Eq-9nZ"/>
+                            <constraint firstItem="19v-NB-FOT" firstAttribute="top" secondItem="eYd-In-ORP" secondAttribute="bottom" constant="10" id="RPg-9d-Zdi"/>
+                            <constraint firstItem="qhl-d8-ddI" firstAttribute="trailing" secondItem="eYd-In-ORP" secondAttribute="trailing" constant="20" id="S2b-gZ-j4x"/>
+                            <constraint firstItem="lnS-Ev-gUt" firstAttribute="top" secondItem="2g1-Sg-pf8" secondAttribute="bottom" constant="10" id="Vcj-Mf-wcz"/>
+                            <constraint firstItem="Eit-ZZ-z7c" firstAttribute="leading" secondItem="qhl-d8-ddI" secondAttribute="leading" constant="20" id="hQ1-hD-kmP"/>
+                            <constraint firstItem="WYA-WA-5uc" firstAttribute="top" secondItem="qhl-d8-ddI" secondAttribute="top" constant="13" id="hma-Aj-Lsv"/>
+                            <constraint firstItem="Om8-pz-Xai" firstAttribute="top" secondItem="qhl-d8-ddI" secondAttribute="top" constant="10" id="jhs-U6-hKa"/>
+                            <constraint firstItem="qhl-d8-ddI" firstAttribute="trailing" secondItem="Eit-ZZ-z7c" secondAttribute="trailing" constant="20" id="l5q-py-g7H"/>
+                            <constraint firstItem="eYd-In-ORP" firstAttribute="leading" secondItem="qhl-d8-ddI" secondAttribute="leading" constant="20" id="t4B-UO-bSP"/>
+                            <constraint firstItem="dHf-sz-fmz" firstAttribute="leading" secondItem="qhl-d8-ddI" secondAttribute="leading" constant="20" id="wFi-Fh-dbn"/>
+                            <constraint firstItem="2g1-Sg-pf8" firstAttribute="top" secondItem="WYA-WA-5uc" secondAttribute="bottom" constant="20" id="xHx-VX-Hta"/>
+                            <constraint firstItem="Eit-ZZ-z7c" firstAttribute="top" secondItem="lnS-Ev-gUt" secondAttribute="bottom" constant="20" id="xwd-8p-Ae1"/>
+                            <constraint firstItem="qhl-d8-ddI" firstAttribute="trailing" secondItem="lnS-Ev-gUt" secondAttribute="trailing" constant="73" id="zye-Bf-aUD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="menuNameLabel" destination="19v-NB-FOT" id="jXi-or-tge"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="54n-S2-GLh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2915" y="-1639"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="rGB-si-NZO">
@@ -809,9 +926,6 @@
         <image name="insertInHome" width="350" height="392"/>
         <image name="map" catalog="system" width="128" height="112"/>
         <image name="person" catalog="system" width="128" height="121"/>
-        <systemColor name="lightTextColor">
-            <color white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
