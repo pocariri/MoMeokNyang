@@ -438,36 +438,8 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZdM-Qr-YJl">
-                                <rect key="frame" x="20" y="303.66666666666669" width="353" height="120"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="카테고리 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQB-CB-m6G">
-                                        <rect key="frame" x="111" y="21" width="130" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="원하는 카테고리를 설정합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8K-TK-mir">
-                                        <rect key="frame" x="74" y="77" width="205" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="ubk-tb-oK6"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="24"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tok-mE-sG1">
-                                <rect key="frame" x="20" y="443.66666666666669" width="353" height="120.00000000000006"/>
+                                <rect key="frame" x="20" y="433.66666666666669" width="353" height="120.00000000000006"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="lK1-s2-VYc"/>
                                 </constraints>
@@ -480,31 +452,43 @@
                                     <action selector="quickRandomButtonTapped:" destination="yqP-uC-2GM" eventType="touchUpInside" id="lPH-3v-9lu"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RII-2P-QxD">
+                                <rect key="frame" x="20" y="293.66666666666669" width="353" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="05r-I9-4Il"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="카테고리 설정" subtitle="원하는 카테고리를 설정합니다">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.066666666669999999" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9oQ-Sv-7Op"/>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.99215686274509807" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="RII-2P-QxD" firstAttribute="top" secondItem="EOP-9I-OHh" secondAttribute="bottom" constant="20" id="0C2-tL-t32"/>
                             <constraint firstItem="CV5-Tu-gfI" firstAttribute="top" secondItem="9oQ-Sv-7Op" secondAttribute="top" constant="13" id="31r-t4-E9u"/>
                             <constraint firstItem="CV5-Tu-gfI" firstAttribute="top" secondItem="9oQ-Sv-7Op" secondAttribute="top" constant="14" id="5w8-zd-Cxj"/>
+                            <constraint firstItem="tok-mE-sG1" firstAttribute="top" secondItem="RII-2P-QxD" secondAttribute="bottom" constant="20" id="BCR-JG-rqT"/>
                             <constraint firstItem="CV5-Tu-gfI" firstAttribute="top" secondItem="9oQ-Sv-7Op" secondAttribute="top" constant="15" id="Bfn-h5-ZqX"/>
                             <constraint firstItem="EOP-9I-OHh" firstAttribute="top" secondItem="p9L-3f-Sjx" secondAttribute="bottom" constant="20" id="I6p-uq-wd3"/>
                             <constraint firstItem="tok-mE-sG1" firstAttribute="leading" secondItem="9oQ-Sv-7Op" secondAttribute="leading" constant="20" id="JJ9-Ax-aai"/>
                             <constraint firstItem="EOP-9I-OHh" firstAttribute="leading" secondItem="9oQ-Sv-7Op" secondAttribute="leading" constant="20" id="JsH-00-EoK"/>
-                            <constraint firstItem="9oQ-Sv-7Op" firstAttribute="trailing" secondItem="ZdM-Qr-YJl" secondAttribute="trailing" constant="20" id="MQe-ne-L1f"/>
+                            <constraint firstItem="RII-2P-QxD" firstAttribute="leading" secondItem="9oQ-Sv-7Op" secondAttribute="leading" constant="20" id="MUJ-AU-crc"/>
                             <constraint firstItem="9oQ-Sv-7Op" firstAttribute="trailing" secondItem="CV5-Tu-gfI" secondAttribute="trailing" constant="131.5" id="QEt-bB-ArY"/>
                             <constraint firstItem="9oQ-Sv-7Op" firstAttribute="trailing" secondItem="tok-mE-sG1" secondAttribute="trailing" constant="20" id="QmK-tb-5oD"/>
-                            <constraint firstItem="ZdM-Qr-YJl" firstAttribute="leading" secondItem="9oQ-Sv-7Op" secondAttribute="leading" constant="20" id="YNU-Lk-Rkf"/>
+                            <constraint firstItem="9oQ-Sv-7Op" firstAttribute="trailing" secondItem="RII-2P-QxD" secondAttribute="trailing" constant="20" id="ZRO-rk-kGN"/>
                             <constraint firstItem="p9L-3f-Sjx" firstAttribute="leading" secondItem="9oQ-Sv-7Op" secondAttribute="leading" constant="20" id="aRL-AC-mnf"/>
-                            <constraint firstItem="ZdM-Qr-YJl" firstAttribute="top" secondItem="EOP-9I-OHh" secondAttribute="bottom" constant="30" id="fqc-nh-aMT"/>
                             <constraint firstItem="p9L-3f-Sjx" firstAttribute="top" secondItem="CV5-Tu-gfI" secondAttribute="bottom" constant="20" id="gpu-zo-zmi"/>
                             <constraint firstItem="xlz-Ql-MvC" firstAttribute="top" secondItem="9oQ-Sv-7Op" secondAttribute="top" constant="10" id="hiG-S3-ies"/>
                             <constraint firstItem="CV5-Tu-gfI" firstAttribute="leading" secondItem="9oQ-Sv-7Op" secondAttribute="leading" constant="131.5" id="rzT-hC-aHw"/>
-                            <constraint firstItem="tok-mE-sG1" firstAttribute="top" secondItem="ZdM-Qr-YJl" secondAttribute="bottom" constant="20" id="xJL-60-UaX"/>
                             <constraint firstItem="xlz-Ql-MvC" firstAttribute="leading" secondItem="9oQ-Sv-7Op" secondAttribute="leading" constant="20" id="ze8-LH-8dW"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="quickRandomButton" destination="tok-mE-sG1" id="Qn8-RX-ETr"/>
+                        <outlet property="selectCategoryButton" destination="RII-2P-QxD" id="2fv-A2-Uxz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lg3-94-KfT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -2,8 +2,9 @@ import UIKit
 import FirebaseFirestore
 
 class MenuSelectViewController: UIViewController {
-
+    @IBOutlet weak var selectCategoryButton: UIButton!
     @IBOutlet weak var quickRandomButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,9 +37,28 @@ class MenuSelectViewController: UIViewController {
         config.attributedSubtitle = subtitleAttr
         
         config.titleAlignment = .center
-        config.titlePadding = 6
+        config.titlePadding = 10
         
         quickRandomButton.configuration = config
+        
+        // 카테고리 설정 버튼
+        var categoryConfig = selectCategoryButton.configuration ?? UIButton.Configuration.filled()
+        
+        var categoryTitleAttr = AttributedString("카테고리 설정")
+        categoryTitleAttr.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        categoryTitleAttr.foregroundColor = UIColor.white
+        categoryConfig.attributedTitle = categoryTitleAttr
+        
+        var categorySubtitleAttr = AttributedString("원하는 카테고리를 설정합니다")
+        categorySubtitleAttr.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        categorySubtitleAttr.foregroundColor = UIColor.lightText
+        categoryConfig.attributedSubtitle = categorySubtitleAttr
+        
+        categoryConfig.titleAlignment = .center
+        categoryConfig.titlePadding = 10
+        
+        selectCategoryButton.configuration = categoryConfig
+        
     }
     
     // 메뉴 랜덤 추출

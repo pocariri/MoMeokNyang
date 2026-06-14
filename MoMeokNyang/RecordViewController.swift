@@ -6,6 +6,13 @@ struct EatingRecord {
     let menuName: String
     let category: String
     let timestamp: Date?
+    
+    var formattedDate: String {
+        guard let date = timestamp else { return "" }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy.MM.dd"
+        return formatter.string(from: date)
+    }
 }
 
 class RecordViewController: UIViewController {
@@ -109,29 +116,46 @@ class RecordViewController: UIViewController {
         
         recordTableView.reloadData()
     }
+    
     private func setupUI() {
         topHeaderView.layer.cornerRadius = 15
         topHeaderView.clipsToBounds = true
     }
 }
 
-// TableView 임시 설정
 extension RecordViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // 우선 화면이 잘 돌아가는지 확인하기 위해 임시로 5개만 띄웁니다.
-        return 15
+        if recordSegmentedControl.selectedSegmentIndex == 0 {
+            return eatingRecords.count
+        } else {
+            return 5
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // 스토리보드에서 생성할 셀 ID를 임시로 "RecordCell"로 지정해 둡니다.
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecordCell") ?? UITableViewCell(style: .default, reuseIdentifier: "RecordCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecordCell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "RecordCell")
         
-        // 지금 어떤 탭이 켜져 있느냐에 따라 셀에 보일 텍스트를 다르게 처리합니다!
+        cell.accessoryView = nil
+        
         if recordSegmentedControl.selectedSegmentIndex == 0 {
-            cell.textLabel?.text = "최근 기록 데이터 자리 #\(indexPath.row + 1)"
+            let currentRecord = eatingRecords[indexPath.row]
+            cell.textLabel?.text = currentRecord.menuName
+            cell.detailTextLabel?.text = "카테고리: \(currentRecord.category)"
+            cell.textLabel?.textColor = .black
+            
+            let dateLabel = UILabel()
+            dateLabel.text = currentRecord.formattedDate
+            dateLabel.font = UIFont.systemFont(ofSize: 13, weight: .regular)
+            dateLabel.textColor = .lightGray
+            dateLabel.sizeToFit()
+            
+            cell.accessoryView = dateLabel
+            
         } else {
+            // 찜 목록 탭 (임시)
             cell.textLabel?.text = "찜한 식당 데이터 자리 #\(indexPath.row + 1)"
+            cell.detailTextLabel?.text = ""
         }
         
         return cell
