@@ -50,3 +50,17 @@
 3. 목록에서 프로젝트에 내장된 `Seoul` GPX 항목을 선택해 줍니다. 
 
 이 작업을 통해 시뮬레이터의 위치가 서울 좌표로 세팅되어 정상적인 한국 맛집 데이터를 애플 서버로부터 수신하게 됩니다.
+
+## 4. 프로젝트 구동 및 시연 영상
+
+실제 시뮬레이터에서 앱을 구동하고 핵심 기능을 시연하는 모습을 담은 영상입니다.
+(아래 이미지를 클릭하시면 해당 유튜브 시연 영상으로 이동합니다!)
+
+<div align="center">
+  <a href="https://youtube.com/shorts/I3BiZpTN760?feature=share">
+    <img src="https://img.youtube.com/vi/I3BiZpTN760?feature=share/0.jpg" alt="모먹냥 앱 시연 영상" width="600px">
+    <br>
+    <br>
+    <strong>[위 이미지를 클릭하거나 여기를 눌러 시연 영상 시청하기]https://youtube.com/shorts/I3BiZpTN760?feature=share</strong>
+  </div>
+</div>
