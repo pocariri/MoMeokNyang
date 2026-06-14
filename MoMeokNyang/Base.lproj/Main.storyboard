@@ -459,9 +459,12 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="카테고리 설정" subtitle="원하는 카테고리를 설정합니다">
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" red="0.066666666669999999" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="categorySelectButtonTapped:" destination="yqP-uC-2GM" eventType="touchUpInside" id="gPf-h3-htH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9oQ-Sv-7Op"/>
@@ -488,12 +491,89 @@
                     </view>
                     <connections>
                         <outlet property="quickRandomButton" destination="tok-mE-sG1" id="Qn8-RX-ETr"/>
-                        <outlet property="selectCategoryButton" destination="RII-2P-QxD" id="2fv-A2-Uxz"/>
+                        <outlet property="selectCategoryButton" destination="RII-2P-QxD" id="FqB-Bf-PdJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lg3-94-KfT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1829.7709923664122" y="-1639.4366197183099"/>
+        </scene>
+        <!--Category Select View Controller-->
+        <scene sceneID="Od3-ZR-Dva">
+            <objects>
+                <viewController storyboardIdentifier="CategorySelectViewController" id="fUC-Fv-apj" customClass="CategorySelectViewController" customModule="MoMeokNyang" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oUl-hY-wDZ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모먹냥 메뉴추천" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZi-3p-IZK">
+                                <rect key="frame" x="133" y="151" width="126" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="2NC-6t-kUo"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="24" id="m2z-ex-8dl"/>
+                                    <constraint firstAttribute="height" constant="24" id="q9q-JG-q4l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.066666666669999999" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리 설정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eya-vS-B2f">
+                                <rect key="frame" x="20" y="195" width="353" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="HZc-UK-uuH"/>
+                                    <constraint firstAttribute="height" constant="36" id="MfR-9i-LVd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D9k-ql-zWu">
+                                <rect key="frame" x="20" y="251" width="353" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="2k5-eo-rER"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="Df2-c5-wRL"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vo-U6-7X1">
+                                <rect key="frame" x="20" y="471" width="353" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ga2-J8-Fc7"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="xSL-Sf-OWS"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="메뉴 랜덤 추천">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.066666666669999999" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="randomMenuButtonTapped:" destination="fUC-Fv-apj" eventType="touchUpInside" id="jjP-4a-K1K"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tkX-8P-XWS"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.99215686270000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="eya-vS-B2f" firstAttribute="top" secondItem="ZZi-3p-IZK" secondAttribute="bottom" constant="20" id="0h3-lz-YNz"/>
+                            <constraint firstItem="tkX-8P-XWS" firstAttribute="trailing" secondItem="ZZi-3p-IZK" secondAttribute="trailing" constant="134" id="4Wd-6E-dIH"/>
+                            <constraint firstItem="eya-vS-B2f" firstAttribute="leading" secondItem="tkX-8P-XWS" secondAttribute="leading" constant="20" id="Bcg-Ug-08I"/>
+                            <constraint firstItem="D9k-ql-zWu" firstAttribute="top" secondItem="eya-vS-B2f" secondAttribute="bottom" constant="20" id="GI5-o9-CAA"/>
+                            <constraint firstItem="ZZi-3p-IZK" firstAttribute="leading" secondItem="tkX-8P-XWS" secondAttribute="leading" constant="133" id="GwO-Qy-shl"/>
+                            <constraint firstItem="tkX-8P-XWS" firstAttribute="trailing" secondItem="2Vo-U6-7X1" secondAttribute="trailing" constant="20" id="Ipl-bQ-gzQ"/>
+                            <constraint firstItem="D9k-ql-zWu" firstAttribute="leading" secondItem="tkX-8P-XWS" secondAttribute="leading" constant="20" id="OKX-XB-7Lc"/>
+                            <constraint firstItem="tkX-8P-XWS" firstAttribute="trailing" secondItem="eya-vS-B2f" secondAttribute="trailing" constant="20" id="T6V-7D-gcR"/>
+                            <constraint firstItem="2Vo-U6-7X1" firstAttribute="top" secondItem="D9k-ql-zWu" secondAttribute="bottom" constant="20" id="XNM-qw-Prl"/>
+                            <constraint firstItem="tkX-8P-XWS" firstAttribute="trailing" secondItem="D9k-ql-zWu" secondAttribute="trailing" constant="20" id="iFi-bj-7mi"/>
+                            <constraint firstItem="ZZi-3p-IZK" firstAttribute="top" secondItem="tkX-8P-XWS" secondAttribute="top" constant="33" id="ojp-VQ-9To"/>
+                            <constraint firstItem="2Vo-U6-7X1" firstAttribute="leading" secondItem="tkX-8P-XWS" secondAttribute="leading" constant="20" id="omV-lO-WtE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="categoryPickerView" destination="D9k-ql-zWu" id="kKw-1y-AK0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HH7-bX-F6b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2691" y="-1639"/>
         </scene>
         <!--Recommendation Result View Controller-->
         <scene sceneID="yoz-7j-xO5">
@@ -621,7 +701,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="54n-S2-GLh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2915" y="-1639"/>
+            <point key="canvasLocation" x="3546" y="-1639"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="rGB-si-NZO">
@@ -910,6 +990,9 @@
         <image name="insertInHome" width="350" height="392"/>
         <image name="map" catalog="system" width="128" height="112"/>
         <image name="person" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

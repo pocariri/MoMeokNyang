@@ -2,6 +2,7 @@ import UIKit
 import FirebaseFirestore
 
 class MenuSelectViewController: UIViewController {
+    
     @IBOutlet weak var selectCategoryButton: UIButton!
     @IBOutlet weak var quickRandomButton: UIButton!
     
@@ -15,6 +16,19 @@ class MenuSelectViewController: UIViewController {
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    // 카테고리 설정 버튼
+    @IBAction func categorySelectButtonTapped(_ sender: UIButton) {
+        guard let categoryVC = self.storyboard?.instantiateViewController(withIdentifier: "CategorySelectViewController") as? CategorySelectViewController else { return }
+        
+        if let sheet = categoryVC.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.prefersGrabberVisible = true
+        }
+            
+        self.present(categoryVC, animated: true, completion: nil)
+    }
+    
     
     // 바로 랜덤 추천 버튼
     @IBAction func quickRandomButtonTapped(_ sender: UIButton) {
@@ -46,19 +60,18 @@ class MenuSelectViewController: UIViewController {
         
         var categoryTitleAttr = AttributedString("카테고리 설정")
         categoryTitleAttr.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        categoryTitleAttr.foregroundColor = UIColor.white
+        categoryTitleAttr.foregroundColor = UIColor.black
         categoryConfig.attributedTitle = categoryTitleAttr
         
         var categorySubtitleAttr = AttributedString("원하는 카테고리를 설정합니다")
         categorySubtitleAttr.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        categorySubtitleAttr.foregroundColor = UIColor.lightText
+        categorySubtitleAttr.foregroundColor = UIColor.darkGray
         categoryConfig.attributedSubtitle = categorySubtitleAttr
         
         categoryConfig.titleAlignment = .center
         categoryConfig.titlePadding = 10
         
         selectCategoryButton.configuration = categoryConfig
-        
     }
     
     // 메뉴 랜덤 추출
